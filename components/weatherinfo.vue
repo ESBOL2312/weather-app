@@ -13,17 +13,16 @@
             - - - - - - - -
         </p>
         <p class="heading-3">{{citytempmin}}C<sup>o</sup>/{{citytempmax}}C<sup>o</sup></p>
-        <v-row
-    >
-            <v-col>
+        <v-row no-gutters>
+            <v-col cols="4">
                 <p>{{citywd}}</p>
                 <img :src="citywi|imglink" alt="">
             </v-col>
-            <v-col>
+            <v-col cols="4">
                 <p>wind {{citywind}}m/c</p>
                 <img class="another-icon" src="~static/wind1.svg" alt="">
             </v-col>
-            <v-col>
+            <v-col cols="4">
                 <p>{{cityp}}hPa</p>
                 <img class="another-icon" src="~static/pressure.svg" alt="">
             </v-col>

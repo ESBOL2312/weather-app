@@ -10,6 +10,14 @@
       :citywind="weatherInfo.wind.speed"
       :cityp="weatherInfo.main.pressure"
     ></main-info>
+      <v-overlay :value="overlay">
+      <v-progress-circular
+        indeterminate
+        size="64"
+      ></v-progress-circular>
+    </v-overlay>
+    <input :value="cin" placeholder="a">
+    {{cin}}
   </div>
 </template>
  
@@ -19,7 +27,8 @@ import {mapGetters} from 'vuex'
 export default {
   data() {
     return{
-
+      cin:'',
+      overlay:false
     }
   },
   computed:{
@@ -35,6 +44,6 @@ export default {
 </script>
 <style>
   .mt-vh{
-    margin-top: 16vh;
+    margin-top: 15vh;
   }
 </style>
