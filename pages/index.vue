@@ -1,73 +1,40 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        w-app
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+    <main-info class="mt-vh"
+      :cityname="weatherInfo.name"
+      :citytemp="weatherInfo.main.temp"
+      :citytempmin="weatherInfo.main.temp_min"
+      :citytempmax="weatherInfo.main.temp_max"
+      :citywd="weatherInfo.weather[0].main"
+      :citywi="weatherInfo.weather[0].icon"
+      :citywind="weatherInfo.wind.speed"
+      :cityp="weatherInfo.main.pressure"
+    ></main-info>
   </div>
 </template>
-
+ 
 <script>
-export default {}
+import main from '~/components/weatherinfo.vue'
+import {mapGetters} from 'vuex'
+export default {
+  data() {
+    return{
+
+    }
+  },
+  computed:{
+    ...mapGetters({
+      weatherInfo:'getWI'
+    })
+  },
+  components:{
+    mainInfo:main
+  },
+  middleware:['def']
+}
 </script>
-
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+  .mt-vh{
+    margin-top: 16vh;
+  }
 </style>
