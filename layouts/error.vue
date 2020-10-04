@@ -29,7 +29,7 @@
         </button>
       </form>
       <div class="buttons">
-        <v-btn color="error" to="/">back to homepage</v-btn>
+        <nuxt-link to="/">home</nuxt-link>
       </div>
     </div>
   </v-app>

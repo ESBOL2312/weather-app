@@ -13,7 +13,7 @@
             - - - - - - - -
         </p>
         <p class="heading-3">{{citytempmin}}C<sup>o</sup>/{{citytempmax}}C<sup>o</sup></p>
-        <v-row no-gutters>
+        <v-row class="rounded-lg pt-6" no-gutters style="background-color:rgba(255,255,255,0.4)">
             <v-col cols="4">
                 <p>{{citywd}}</p>
                 <img :src="citywi|imglink" alt="">
@@ -40,8 +40,6 @@ export default {
     methods:{
         getCurrentDate(){
             const today = new Date();
-            //const weekDay = today.toLocaleString('en', { weekday: 'long' })
-            //const month = today.toLocaleString('en', { weekday: 'long' })
             return today.toLocaleString('en', { month: 'long' ,weekday:'long',day:'2-digit',year:'numeric'})
         }
     } 
