@@ -45,7 +45,7 @@ export default {
     } 
 }
 </script>
-<style scoped>
+<style>
     .another-icon{
         max-width: 100px;
         padding: 20px;

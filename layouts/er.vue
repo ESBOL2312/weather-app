@@ -1,5 +1,10 @@
 <template>
-    <div>
+     <v-app>
+      <v-main>
+    <!-- Provides the application the proper gutter -->
+      <v-container fluid>
         <Nuxt />
-    </div>
+      </v-container>
+      </v-main>
+    </v-app>
 </template>

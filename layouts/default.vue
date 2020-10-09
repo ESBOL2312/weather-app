@@ -1,8 +1,7 @@
 <template >
   <v-app>
-    <v-app-bar :flat="tr" class="white--text" app color="rgba(255,255,255,.0)">
-    <SearchTop></SearchTop>
-    </v-app-bar>
+    <!--<v-app-bar>
+    </v-app-bar>-->
   <!-- Sizes your content based upon application components -->
   <v-main class="bb" :class="getDayNight()">
     <!-- Provides the application the proper gutter -->
@@ -16,15 +15,11 @@
 </v-app>  
 </template>
 <script>
-import Search from '~/components/search.vue'
 export default {
   data(){
     return{
       tr:true,
     }
-  },
-  components:{
-    SearchTop:Search,
   },
   methods:{
     getDayNight(){

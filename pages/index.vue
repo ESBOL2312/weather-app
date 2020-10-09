@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SearchTop v-on:change-snackbar="snackbar = !snackbar"></SearchTop>
     <main-info class="mt-vh"
       :cityname="weatherInfo.name"
       :citytemp="weatherInfo.main.temp"
@@ -16,26 +17,36 @@
         size="64"
       ></v-progress-circular>
     </v-overlay>
+    <v-snackbar
+        v-model="snackbar"
+        :timeout="timeout"
+      >
+      city not found
+    </v-snackbar>
   </div>
 </template>
- 
 <script>
+import Search from '~/components/search.vue'
 import main from '~/components/weatherinfo.vue'
 import {mapGetters} from 'vuex'
 export default {
   data() {
     return{
-      overlay:false
+      overlay:false,
+      timeout:3500,
+      snackbar:false
+
     }
   },
   computed:{
     ...mapGetters({
       overlayStation:'getOverlayStation',
-      weatherInfo:'getWI'
+      weatherInfo:'getWI',
     })
   },
   components:{
-    mainInfo:main
+    mainInfo:main,
+    SearchTop:Search,
   },
   middleware:['def']
 }
