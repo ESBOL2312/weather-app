@@ -1,17 +1,17 @@
 <template>
     <div class="white--text text-center">
-        <p class="text-h3 font-weight-regular">
+        <div class="text-h3 font-weight-regular">
             {{cityname}}
-        </p>
+        </div>
+        <div>
+             <country-flag :country="countrycode" size='normal'/>
+        </div>
         <p class="subtitle-1">
             {{getCurrentDate()}}
         </p>
         <h1 class="text-h1 font-weight-black">
-            {{citytemp}}C<sup>o</sup>
+            {{Math.round(citytemp)}}C<sup>o</sup>
         </h1>
-        <p>
-            - - - - - - - -
-        </p>
         <p class="heading-3">{{citytempmin}}C<sup>o</sup>/{{citytempmax}}C<sup>o</sup></p>
         <v-row class="rounded-lg pt-6" no-gutters style="background-color:rgba(255,255,255,0.4)">
             <v-col cols="4">
@@ -31,7 +31,7 @@
 </template>
 <script>
 export default {
-    props: ['cityname','citytemp','citytempmin','citytempmax','citywd','citywi','citywind','cityp'],
+    props: ['cityname','citytemp','citytempmin','citytempmax','citywd','citywi','citywind','cityp','countrycode'],
     filters: {
         imglink: function(citywi) {
             return `http://openweathermap.org/img/wn/${citywi}@2x.png`

@@ -26,6 +26,7 @@ export default {
       .then((response)=>{
         this.$store.commit('add',response.data);
         this.changeOverlay();
+        this.cityname= '';
       }).catch(error=>{
         this.changeOverlay();
         this.$emit('change-snackbar')

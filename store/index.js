@@ -1,7 +1,6 @@
 export const state = () => ({
     weatherInfo:null,
     overlay:false,
-    snackbar:false,
   })
   
   export const mutations = {
@@ -10,9 +9,6 @@ export const state = () => ({
     },
     changeOverlay(state) {
       state.overlay = !state.overlay
-    },
-    changeSnackbar(state) {
-      state.snackbar = !state.snackbar
     }
   }
   export const getters = {

@@ -10,6 +10,7 @@
       :citywi="weatherInfo.weather[0].icon"
       :citywind="weatherInfo.wind.speed"
       :cityp="weatherInfo.main.pressure"
+      :countrycode="weatherInfo.sys.country"
     ></main-info>
       <v-overlay :value="overlayStation">
       <v-progress-circular
