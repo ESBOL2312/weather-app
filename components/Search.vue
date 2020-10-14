@@ -1,7 +1,7 @@
 <template>
   <div class="col search white--text rounded-lg" style="background-color:rgba(255,255,255,0.4)">
     <form @submit.prevent="search">
-      <v-text-field class="white--text search-input pt-0" color="white" label="Serach..." v-model.trim="cityname">
+      <v-text-field class="white--text search-input pt-0" color="white" label="Search..." v-model.trim="cityname">
       </v-text-field>
     </form>
   </div>
